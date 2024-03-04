@@ -32,6 +32,7 @@ jobs:
           retention-days: 1
 
   docker-build:
+    needs: maven-build
     runs-on: ubuntu-latest
 
     steps:
