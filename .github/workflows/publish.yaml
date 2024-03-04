@@ -45,6 +45,9 @@ jobs:
           name: maven-target
           path: target
 
+      - name: Get current folder
+        run: pwd
+
       - name: List Files
         run: ls -R
 
