@@ -16,7 +16,6 @@ jobs:
     # Build with maven
     steps:
       - uses: actions/checkout@v4
-      - name: Install curl (for nektos/act local CI testing)
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
