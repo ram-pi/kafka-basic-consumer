@@ -45,9 +45,6 @@ jobs:
           name: maven-target
           path: target
 
-      - name: Get current folder
-        run: pwd
-
       - name: List Files
         run: ls -R
 
@@ -61,10 +58,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push docker image
+      - name: Build and push docker image (faulty consumer)
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
           file: ./faulty.Dockerfile
           push: true
           tags: "faulty"
+
+      - name: Build and push docker image (ok consumer)
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          file: ./ok.Dockerfile
+          push: true
+          tags: "ok"
