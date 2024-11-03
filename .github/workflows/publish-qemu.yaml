@@ -45,7 +45,8 @@ jobs:
           file: ./ok.Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: ${{ steps.meta.outputs.tags }}
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/${{ github.repository_owner }}/consumer-ok:${{ github.ref_name }}
           labels: ${{ steps.meta.outputs.labels }}
 
   build-and-push-image-faulty-consumer:
@@ -82,5 +83,6 @@ jobs:
           file: ./faulty.Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: ${{ steps.meta.outputs.tags }}
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/${{ github.repository_owner }}/consumer-faulty:${{ github.ref_name }}
           labels: ${{ steps.meta.outputs.labels }}
