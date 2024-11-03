@@ -1,4 +1,4 @@
-name: Create and publish a Docker image
+name: QEMU Docker build and publish
 
 # configure to run for every new tag
 on:
